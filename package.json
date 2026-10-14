@@ -1,0 +1,36 @@
+{
+  "name": "math-explainer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "离线优先的高中数学交互讲解与分步题解框架",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "build:legacy": "node legacy/ellipse/build.mjs && node legacy/conics/build.mjs",
+    "build:all": "npm run build:legacy && npm run build && node scripts/assemble.mjs",
+    "test": "tsx --test tests/*.test.ts",
+    "check:content": "tsx scripts/check-content.ts",
+    "check:public": "node scripts/check-public.mjs",
+    "export": "tsx scripts/export.ts",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:browser": "playwright test",
+    "test:legacy": "node legacy/ellipse/test-model.mjs && node legacy/conics/test-model.mjs"
+  },
+  "dependencies": {
+    "katex": "^0.19.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}

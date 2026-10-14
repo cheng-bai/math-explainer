@@ -1,0 +1,10 @@
+node_modules/
+dist/
+artifacts/
+playwright-report/
+test-results/
+*.log
+.env*
+!.env.example
+.DS_Store
+docs/REVIEW_REQUEST.md
